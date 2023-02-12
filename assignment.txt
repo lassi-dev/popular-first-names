@@ -1,0 +1,46 @@
+In the folder /data there is a data set consisting of two files: municipality-listing-2020-10-21.parquet and most-popular-first-names-by-municipality.jsonl.gz
+
+We wish you to:
+---------------
+
+1. Define relational database tables to hold the data set for reporting purposes.
+2. Create an ETL / ELT solution for moving the data into the tables you have defined.
+
+You may use any method to come up with the solution, but it would be nice to have it documented (as code for example), so that what you've done can be traced.
+See the bottom of this file for more info about the data set.
+
+
+As a bonus task you could either:
+---------------------------------
+
+a) Write unit tests for your ETL / ELT solution or
+b) Use the data to answer the following question:
+What is the relative frequency distribution over time (as percentages) for the most popular male names in the cities ('Kaupunki') of the region 'Pohjois-Savo'?
+You may choose the means to solve the problem and present the outcome as you like, e.g. as a table, a figure or an sql query.
+
+
+Additional information on the data set:
+---------------------------------------
+municipality-listing-2020-10-21.parquet is an uncompressed parquet file. It contains information on Finnish municipalities. It is not a complete listing and the data has been cleaned. The data in textual fields is in Finnish/Swedish, but the column headers are in English.
+
+Explanations for the fields:
+MUNICIPALITY_NUMBER - Uniquely identifies each municipality
+MUNICIPALITY_NAME_FI - Municipality name in Finnish
+MUNICIPALITY_NAME_SE - Municipality name in Swedish
+MUNICIPALITY_TYPE - Value is 'Kaupunki' (city) if the municipality has a status of a city. Otherwise the value is 'Kunta'
+PRIMARY_LANGUAGE - The primary language used in the municipality.
+ELECTORAL_DISTRICT_NUMBER - Uniquely identifies the electoral district the municipality belongs to
+ELECTORAL_DISTRICT_NAME_FI - Name of the electoral district the municipality belongs to in Finnish
+ELECTORAL_DISTRICT_NAME_SE - Name of the electoral district the municipality belongs to in Swedish
+REGION_NUMBER - Uniquely identifies the region the municipality belongs to. Finland is divided into 19 regions
+REGION_NAME_FI - Name of the region the municipality belongs to in Finnish
+REGION_NAME_SE - Name of the region the municipality belongs to in Swedish
+
+most-popular-first-names-by-municipality.jsonl.gz is a gzip compressed file holding data in JSON Lines format. This file contains information on the most popular male and female first names in different Finnish municipalities in different years. This listing is not complete nor completely cleaned. For example, some of the observations have a missing value in the field 'BIRTH_MUNICIPALITY_NUMBER'. Explanations for the fields:
+
+YEAR_OF_BIRTH - The year of the sample
+BIRTH_MUNICIPALITY_NUMBER - The number of the municipality the sample is from
+BIRTH_MUNICIPALITY_NAME - The name of the municipality the sample is from in Finnish
+GENDER - 1 for male, 2 for female
+FIRST_NAME - The most popular first name
+AMOUNT - Number of times the most popular first name was given that year

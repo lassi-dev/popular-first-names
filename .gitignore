@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+first_name_amounts.sqlite
+datamodel/.$tietokantamalli.drawio.bkp
+data/most-popular-first-names-by-municipality.jsonl
