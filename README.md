@@ -2,7 +2,7 @@
 
 This is an ETL process for creating a datamodel for reporting popular first names and their distribution across municipalities in Finland.
 
-![The Data Model](datamodel\tietokantamalli.drawio.png)
+![The Data Model](./datamodel/tietokantamalli.drawio.png)
 
 The code in the **Jupyter Notebook** is divided into 3 parts: creation of the **municipality dimension**, creation of the **first name amounts fact** and bonus assignment on the **relative frequency distribution**.
 
