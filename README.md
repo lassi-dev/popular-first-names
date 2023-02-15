@@ -4,7 +4,9 @@ This is an ETL process for creating a datamodel for reporting popular first name
 
 ![The Data Model](./datamodel/tietokantamalli.drawio.png)
 
-The code in the **Jupyter Notebook** is divided into 3 parts: creation of the **municipality dimension**, creation of the **first name amounts fact** and bonus assignment on the **relative frequency distribution**.
+The code in the **Jupyter Notebook** is divided into 3 parts: creation of the municipality dimension, creation of the first name amounts fact and bonus assignment on the **relative frequency distribution**.
+
+The **ETL** code is rewritten into a .py files in **etl/** folder and there you can find the unit tests also.
 
 Source file formats consist of JSONL and Apache Parquet. They're quickly parsed to the common data structures in order to decouple the code from the file type. As target database, **SQLite** was chosen for the demonstration, so that no separate database installation is needed. The code is written in **Python 3**, more specifically 3.8.15.
 
@@ -12,6 +14,15 @@ Since there was no specification on the language and the assignment was in Engli
 
 ## Usage
 
- - The *most-popular-first-names-by-municipality.jsonl.gz* needs to be unzipped before running the code.
- - Missing Python packages can be installed using: ```$ pip install```
- - The code is written in Jupyter Notebook. **The content was exported to a HTML file, and so the Jupyter Notebook installation is not required to read the code.**
+The *most-popular-first-names-by-municipality.jsonl.gz* needs to be unzipped before running the code.
+Missing Python packages can be installed using: ```$ pip install```
+run tests:
+```
+$ cd etl
+$ python -m unittest discover
+```
+run etl:
+```
+$ cd etl
+$ python .\etl.py
+```
